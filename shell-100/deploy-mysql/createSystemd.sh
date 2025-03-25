@@ -10,12 +10,12 @@
 # $3 datadir mysql数据目录
 function createSystemdService()
 {
-serviceFile="/etc/systemd/system/mysql.service";
+serviceFile="/etc/systemd/system/mysql.service"
 if [ -e $serviceFile ] ;then
 	echo "Systemed 服务配置文件 ${serviceFile} 已存在"
 	exit 20
 fi
-cat >  << EOF
+cat > $serviceFile << EOF
 [Unit]
 Description=MySQL Server
 After=network.target
